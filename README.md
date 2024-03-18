@@ -1,8 +1,7 @@
-###  DATE: 
-
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  DATE:14.03.2024 
+###  NAME: EZHIL SREE J
+###  ROLL NO :212223230056
+###  DEPARTMENT: AIDS
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -59,7 +58,13 @@ CIRCUIT DIAGRAM
  
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
-### FIGURE 04 CIRCUIT DIAGRAM
+### CIRCUIT DIAGRAM 
+![Screenshot 2024-03-18 083307](https://github.com/EzhilsreeJ/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144870412/be3511d9-76eb-4022-ad37-e83d7b0f6b9f)
+### SCHEMATIC REPRESENTATION
+![Screenshot 2024-03-18 084338](https://github.com/EzhilsreeJ/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144870412/2c99a748-306e-4560-8eb7-860f1463142f)
+### GRAPH
+![Screenshot 2024-03-18 084846](https://github.com/EzhilsreeJ/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144870412/ef16c529-dcc0-404d-99d3-d634e6f1f262)
+
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -74,7 +79,45 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+```
+#include<Servo.h>
+Servo myservo;
+int pos=0;
+void setup()
+{
+  myservo.attach(9);
+  Serial.begin(9600);
+
+}
+
+void loop()
+{
+  for(pos=0;pos<=180;pos+=1)
+  {
+    myservo.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    
+    
+  }
+  for(pos=180;pos>=0;pos-=1)
+  {
+    myservo.write(pos);
+    delay(20);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    
+    
+  }
+}
+```
+
+### RESULTS:
+
+Arduino uno interfacing with servo motor is learned and angular position is controlled using PWM signal.
+
+
 
 
 
